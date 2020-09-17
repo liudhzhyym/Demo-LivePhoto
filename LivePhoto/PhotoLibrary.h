@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Photos/Photos.h>
+#import <PhotosUI/PhotosUI.h>
 typedef void(^ResultBlock)(NSURL *path, BOOL success);
 @interface PhotoLibrary : NSObject<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 + (id)sharePhotoLibrary;

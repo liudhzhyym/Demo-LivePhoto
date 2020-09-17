@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1CB6E895934F8306255D0126 /* libPods-LivePhotoShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6A17320AD56B8A6FDDF188 /* libPods-LivePhotoShare.a */; };
+		41963D2C2513672800B2CC93 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41963D2A2513672800B2CC93 /* Photos.framework */; };
+		41963D2D2513672800B2CC93 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41963D2B2513672800B2CC93 /* PhotosUI.framework */; };
+		41963D352513745300B2CC93 /* 123.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 41963D342513745300B2CC93 /* 123.mp4 */; };
 		9163C694C2DE31FEF4745546 /* libPods-LivePhotoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4C0946B97272BB56EB6D0B /* libPods-LivePhotoUITests.a */; };
 		B22758B6C0554D75B4C276B9 /* libPods-LivePhoto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B31F5352D427739A1FBF5206 /* libPods-LivePhoto.a */; };
 		CC854222A8C4D3D83AF13EA9 /* libPods-LivePhotoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063508FD986FA21F9433D9BC /* libPods-LivePhotoTests.a */; };
@@ -75,6 +78,9 @@
 		063508FD986FA21F9433D9BC /* libPods-LivePhotoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LivePhotoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6A17320AD56B8A6FDDF188 /* libPods-LivePhotoShare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LivePhotoShare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F1AF872EFB51E7F5C7ED759 /* Pods-LivePhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivePhoto/Pods-LivePhoto.debug.xcconfig"; sourceTree = "<group>"; };
+		41963D2A2513672800B2CC93 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		41963D2B2513672800B2CC93 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		41963D342513745300B2CC93 /* 123.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = 123.mp4; path = ../../../../Downloads/123.mp4; sourceTree = "<group>"; };
 		4A4C0946B97272BB56EB6D0B /* libPods-LivePhotoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LivePhotoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		667F502D3AC77E75543A19EB /* Pods-LivePhotoShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhotoShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivePhotoShare/Pods-LivePhotoShare.debug.xcconfig"; sourceTree = "<group>"; };
 		B31F5352D427739A1FBF5206 /* libPods-LivePhoto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LivePhoto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +135,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22758B6C0554D75B4C276B9 /* libPods-LivePhoto.a in Frameworks */,
+				41963D2C2513672800B2CC93 /* Photos.framework in Frameworks */,
+				41963D2D2513672800B2CC93 /* PhotosUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +170,8 @@
 		34F023CABF631993627C1395 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41963D2A2513672800B2CC93 /* Photos.framework */,
+				41963D2B2513672800B2CC93 /* PhotosUI.framework */,
 				B31F5352D427739A1FBF5206 /* libPods-LivePhoto.a */,
 				2C6A17320AD56B8A6FDDF188 /* libPods-LivePhotoShare.a */,
 				063508FD986FA21F9433D9BC /* libPods-LivePhotoTests.a */,
@@ -226,6 +236,7 @@
 				FAADE6B220B41ACD006BEDD7 /* LivePhoto.entitlements */,
 				FA447F2420A99F9600F370DE /* video.mp4 */,
 				FA447EF220A93C1100F370DE /* AppDelegate.h */,
+				41963D342513745300B2CC93 /* 123.mp4 */,
 				FA447EF320A93C1100F370DE /* AppDelegate.m */,
 				FA7F2EAE20B526C600E5FA21 /* PhotoLibrary.h */,
 				FA7F2EAF20B526C600E5FA21 /* PhotoLibrary.m */,
@@ -419,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41963D352513745300B2CC93 /* 123.mp4 in Resources */,
 				FA447EFF20A93C1200F370DE /* LaunchScreen.storyboard in Resources */,
 				FA447EFC20A93C1200F370DE /* Assets.xcassets in Resources */,
 				FA9D45F020ABD84000E7DFB1 /* FrameView.xib in Resources */,
@@ -744,11 +756,14 @@
 				CODE_SIGN_ENTITLEMENTS = LivePhoto/LivePhoto.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G4E6298X77;
+				DEVELOPMENT_TEAM = R86L33N66D;
 				INFOPLIST_FILE = LivePhoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SH.LivePhoto;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mars.SH.LivePhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -764,11 +779,14 @@
 				CODE_SIGN_ENTITLEMENTS = LivePhoto/LivePhoto.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G4E6298X77;
+				DEVELOPMENT_TEAM = R86L33N66D;
 				INFOPLIST_FILE = LivePhoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SH.LivePhoto;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mars.SH.LivePhoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -783,7 +801,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G4E6298X77;
 				INFOPLIST_FILE = LivePhotoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = SH.LivePhotoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -799,7 +821,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G4E6298X77;
 				INFOPLIST_FILE = LivePhotoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = SH.LivePhotoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -814,7 +840,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G4E6298X77;
 				INFOPLIST_FILE = LivePhotoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = SH.LivePhotoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -829,7 +859,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G4E6298X77;
 				INFOPLIST_FILE = LivePhotoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = SH.LivePhotoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -844,11 +878,15 @@
 				CODE_SIGN_ENTITLEMENTS = LivePhotoShare/LivePhotoShare.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G4E6298X77;
+				DEVELOPMENT_TEAM = R86L33N66D;
 				INFOPLIST_FILE = LivePhotoShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SH.LivePhoto.LivePhotoShare;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mars.SH.LivePhoto.LivePhotoShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -862,11 +900,15 @@
 				CODE_SIGN_ENTITLEMENTS = LivePhotoShare/LivePhotoShare.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G4E6298X77;
+				DEVELOPMENT_TEAM = R86L33N66D;
 				INFOPLIST_FILE = LivePhotoShare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SH.LivePhoto.LivePhotoShare;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mars.SH.LivePhoto.LivePhotoShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

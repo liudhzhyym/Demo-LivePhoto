@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.livephoto</string>
+		<string>group.mars.SH.LivePhoto</string>
 	</array>
 </dict>
 </plist>

@@ -39,25 +39,25 @@
 - (void)viewDidLoad {
     CGFloat width = [UIScreen mainScreen].bounds.size.width/3;
     CGFloat height = width * 9/16;
-    [self.player play];
-    _frameView = [FrameView frameViewWithFrame:CGRectMake(0, self.playerView.bounds.size.height - height - 30, width, height)];
-    [self.playerView addSubview:_frameView];
-    __weak typeof (self)ws = self;
-
-    //初始化 live photo
-    PHLivePhotoView * livePhotoView = [[PHLivePhotoView alloc] initWithFrame:self.livePhotoBackView.bounds];
-    [self.livePhotoBackView addSubview:livePhotoView];
-    livePhotoView.hidden = YES;
-    self.livePhotoView = livePhotoView;
-    [_frameView setSelectBlock:^(UIImage *image) {
-        ws.coverImage.image = image;
-        //将处理的结果置空
-        ws.imageWriteRes = NO;
-        ws.videoWriteRes = NO;
-        [ws.livePhotoView stopPlayback];
-        ws.livePhotoView.livePhoto = nil;
-        ws.livePhotoView.hidden = YES;
-    }];
+//    [self.player play];
+//    _frameView = [FrameView frameViewWithFrame:CGRectMake(0, self.playerView.bounds.size.height - height - 30, width, height)];
+//    [self.playerView addSubview:_frameView];
+//    __weak typeof (self)ws = self;
+//
+//    //初始化 live photo
+//    PHLivePhotoView * livePhotoView = [[PHLivePhotoView alloc] initWithFrame:self.livePhotoBackView.bounds];
+//    [self.livePhotoBackView addSubview:livePhotoView];
+//    livePhotoView.hidden = YES;
+//    self.livePhotoView = livePhotoView;
+//    [_frameView setSelectBlock:^(UIImage *image) {
+//        ws.coverImage.image = image;
+//        //将处理的结果置空
+//        ws.imageWriteRes = NO;
+//        ws.videoWriteRes = NO;
+//        [ws.livePhotoView stopPlayback];
+//        ws.livePhotoView.livePhoto = nil;
+//        ws.livePhotoView.hidden = YES;
+//    }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rePlayVideo) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player.currentItem];
     //监听进入后台
@@ -65,10 +65,10 @@
     //监听进入前台
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     //初始化
-    [self sliderValue:self.slider];
-    self.coverImage.image = [self getVideoImageWithTime:0.0 videoPath:[NSURL fileURLWithPath:self.originVideoPath]];
+//    [self sliderValue:self.slider];
+//    self.coverImage.image = [self getVideoImageWithTime:0.0 videoPath:[NSURL fileURLWithPath:self.originVideoPath]];
     //松手消失
-    [self.slider addTarget:self action:@selector(touchAciton) forControlEvents:UIControlEventTouchUpInside];
+    //[self.slider addTarget:self action:@selector(touchAciton) forControlEvents:UIControlEventTouchUpInside];
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -143,22 +143,27 @@
     NSString * imagePath = [self getFilePathWithKey:@"IMG.JPG"];
     NSString * videoPath = [self getFilePathWithKey:@"IMG.MOV"];
     
-    if (_videoWriteRes && _imageWriteRes) {
-        //如果是 已经处理好了，那就直接存储。
-        //存储live photo
-        if (sender.tag == 1) {
-            //存储live photo
-            [self writeLive:[NSURL fileURLWithPath:videoPath] image:[NSURL fileURLWithPath:imagePath]];
-        } else {
-            //点击了预览 就播放
-            [self.livePhotoView startPlaybackWithStyle:PHLivePhotoViewPlaybackStyleFull];
-        }
-        return;
-    }
-    
-    if (self.coverImage) {
+//    if (_videoWriteRes && _imageWriteRes) {
+//        //如果是 已经处理好了，那就直接存储。
+//        //存储live photo
+//        if (sender.tag == 1) {
+//            //存储live photo
+//            [self writeLive:[NSURL fileURLWithPath:videoPath] image:[NSURL fileURLWithPath:imagePath]];
+//        } else {
+//            //点击了预览 就播放
+//            [self.livePhotoView startPlaybackWithStyle:PHLivePhotoViewPlaybackStyleFull];
+//        }
+//        return;
+//    }
+    NSString * path = [[NSBundle mainBundle] pathForResource:@"123" ofType:@"mp4"];
+    NSURL * videoUrl=  [NSURL fileURLWithPath:path];
+
+    //if (self.coverImage) {
+        self.coverImage.image = [self getVideoImageWithTime:1.0 videoPath:videoUrl];
         NSData * imageData = UIImageJPEGRepresentation(self.coverImage.image, 1.0);
+        NSLog(@"data is %@",@(imageData.length));
         BOOL isok = [imageData writeToFile:[self getFilePathWithKey:@"image.jpg"] atomically:YES];
+        NSLog(@"isok is %@",@(isok));
         if (!isok) {
             NSLog(@"图片写入错误！！");
         }
@@ -207,7 +212,7 @@
                 }
             }
         });
-    }
+   // }
 }
 
 /*
@@ -261,8 +266,8 @@
  */
 - (UIImage *)getVideoImageWithTime:(Float64)currentTime videoPath:(NSURL *)path {
         AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:path options:nil];
-//        float fps = [[[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] nominalFrameRate];
-//        NSLog(@"视频帧率%f",fps);
+        float fps = [[[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] nominalFrameRate];
+        NSLog(@"视频帧率%f",fps);
         AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
         gen.appliesPreferredTrackTransform = YES;
         gen.requestedTimeToleranceAfter = kCMTimeZero;// 精确提取某一帧,需要这样处理
